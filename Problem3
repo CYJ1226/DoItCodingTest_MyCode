@@ -1,0 +1,16 @@
+# sys 사용 안하고 input으로만 입력 받으면 시간초과 발생
+import sys
+input = sys.stdin.readline
+
+n, m = map(int, input().split())        # 수의 개수, 합 구하는 횟수
+li = list(map(int, input().split()))    # 리스트 생성
+s_li = [0]
+temp = 0
+
+for i in range(n):
+    temp = temp + li[i]
+    s_li.append(temp)
+
+for j in range(m):
+    start, end = map(int, input().split())
+    print(s_li[end] - s_li[start-1])
