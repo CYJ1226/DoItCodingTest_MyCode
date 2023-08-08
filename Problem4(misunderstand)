@@ -22,5 +22,5 @@ for i in range(n):
 # 질의
 for i in range(m):
     sr, sc, er, ec = map(int, input().split())
-    result = arr_sum[er][ec] - arr_sum[sr][sc]
+    result = arr_sum[er][ec] - arr_sum[sr][sc-1]
     print(result)
