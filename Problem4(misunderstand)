@@ -1,0 +1,26 @@
+n, m = map(int, input().split())    # n: 표 크기 m: 합 질의 수
+numbers = list()    # 표
+arr_sum = [[0, 0, 0, 0, 0]]    # 합배열
+
+# 2차원의 표 생성
+for i in range(n):
+    row = list(map(int, input().split()))
+    numbers.append(row)
+
+# 합배열 생성
+for i in range(n):
+    first = arr_sum[i][n]
+    a_s = [first]
+    for j in range(n):
+        temp = a_s[j] + numbers[i][j]
+        a_s.append(temp)
+        # a_s.append(first + numbers[i][j])
+    arr_sum.append(a_s)
+
+# print(arr_sum)
+
+# 질의
+for i in range(m):
+    sr, sc, er, ec = map(int, input().split())
+    result = arr_sum[er][ec] - arr_sum[sr][sc]
+    print(result)
