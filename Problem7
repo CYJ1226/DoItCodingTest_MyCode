@@ -1,0 +1,26 @@
+n = int(input())
+m = int(input())
+cn = list(map(int, input().split()))
+
+cn.sort()
+
+cnt = 0
+x = 0
+y = n-1
+
+# 고유번호 배열 cn을 오름차순 정리 => 1 2 3 4 5 7
+# 인덱스 변수 생성
+s = cn[x] + cn[y]
+while x < y:
+    if s == m:
+        cnt += 1
+        x += 1
+        s = cn[x] + cn[y]
+    elif s < m:
+        x += 1
+        s = cn[x] + cn[y]
+    else:
+        y -= 1
+        s = cn[x] + cn[y]
+
+print(cnt)
