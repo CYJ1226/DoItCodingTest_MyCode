@@ -25,3 +25,5 @@ for i in range(n):
                 x_idx += 1
             elif y_idx == goal_idx:
                 y_idx -= 1
+
+print(cnt)
