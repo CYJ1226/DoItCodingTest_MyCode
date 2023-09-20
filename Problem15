@@ -1,0 +1,20 @@
+# n: 수의 개수
+n = int(input())
+
+# for문 n번 반복해 num 리스트에 값 입력
+num = list()
+for i in range(n):
+    num.append(int(input()))
+
+# 인접한 두 수 비교하여 작은 인덱스의 값이 더 큰 경우 순서 변환
+# 큰 수를 뒤로 보냄
+for i in range(n-1):
+    for j in range(n-1-i):
+        if num[j] > num[j+1]:
+            temp = num[j]
+            num[j] = num[j+1]
+            num[j+1] = temp
+
+# 한 줄씩 출력
+for i in range(n):
+    print(num[i])
