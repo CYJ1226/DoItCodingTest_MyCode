@@ -1,0 +1,15 @@
+# 주어진 자연수의 각 자릿수를 내림차순 정렬
+number = list(input())
+
+for i in range(len(number)):
+    max_idx = i
+    for j in range(i+1, len(number)):
+        if number[max_idx] < number[j]:
+            max_idx = j
+
+    temp = number[i]
+    number[i] = number[max_idx]
+    number[max_idx] = temp
+
+for i in range(len(number)):
+    print(number[i])
